@@ -1,7 +1,9 @@
 import React from "react"
 
 const TableCraft = ():JSX.Element=>{
-    return(<><h1>table craft</h1></>)
+    return (
+        <></>
+      )
 }
 
 export default TableCraft
