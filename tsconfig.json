@@ -16,6 +16,6 @@
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true
   },
-  "include": ["src"],
+  "include": ["src", "types.ts"],
   "exclude": ["node_modules", "dist"]
 }
