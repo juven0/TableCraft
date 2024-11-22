@@ -20,6 +20,6 @@ export const Noheader: Story = {
 
 export const Withheader: Story = {
   args: {
-    noHeader: false,
+    title: "Table Craft",
   },
 };

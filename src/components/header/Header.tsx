@@ -10,7 +10,7 @@ type HeaderProps = {
 const Header = ({ title, fixed, actions }: HeaderProps) => {
   return (
     <div className="Header">
-      <div className="title">Table Craft</div>
+      <div className="title">{title}</div>
       {actions && <div className="actions">{actions}</div>}
     </div>
   );

@@ -1,6 +1,7 @@
 export type TableProps<T> = {
   title?: string;
-  noHeader: boolean;
+  noHeader?: boolean;
+  actions?: React.ReactNode | React.ReactNode[];
   //test
   data?: T[];
 };
