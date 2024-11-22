@@ -1,12 +1,12 @@
 import * as React from "react";
-import "./headRow.css";
+import "./head.css";
 
-interface headRowInterface {
+interface headInterface {
   children?: React.ReactNode;
 }
 
-const HeadRow: React.FC<headRowInterface> = ({ children }) => {
-  return <div className="HeadRow">{children}</div>;
+const Head: React.FC<headInterface> = ({ children }) => {
+  return <div className="Head">{children}</div>;
 };
 
-export default HeadRow;
+export default Head;

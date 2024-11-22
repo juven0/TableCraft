@@ -12,6 +12,14 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Sympleable: Story = {
-  args: {},
+export const Noheader: Story = {
+  args: {
+    noHeader: true,
+  },
+};
+
+export const Withheader: Story = {
+  args: {
+    noHeader: false,
+  },
 };
