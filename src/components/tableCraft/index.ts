@@ -1,1 +1,1 @@
-export {default} from './TableCraft'
+export { default } from "./TableCraft";

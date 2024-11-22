@@ -1,17 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import TableCraft from "./TableCraft";
+import Header from "./Header";
 
 const meta = {
-  component: TableCraft,
-  title: "Table Craft",
+  component: Header,
   tags: ["autodocs"],
-} satisfies Meta<typeof TableCraft>;
+} satisfies Meta<typeof Header>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Sympleable: Story = {
+export const Default: Story = {
   args: {},
 };
