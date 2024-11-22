@@ -2,7 +2,7 @@
   "name": "tablecraft",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/juven0/TableCraft.git"
   },
   "author": "juveno",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/juven0/TableCraft/issues"
   },
