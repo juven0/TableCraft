@@ -1,1 +1,1 @@
-export { default as TableCraft } from "./tableCraft/TableCraft";
+export * from "./components";
