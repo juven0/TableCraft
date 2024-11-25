@@ -1,3 +1,8 @@
-.TableCraft{
-    background-color: burlywood;
+.TableCraft {
+  background-color: burlywood;
+}
+
+.TableCraft .body {
+  display: flex;
+  flex-direction: column;
 }

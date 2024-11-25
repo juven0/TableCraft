@@ -5,3 +5,8 @@ export type TableProps<T> = {
   //test
   data?: T[];
 };
+
+export type TableColumn = {
+  id?: string | number;
+  name?: string | number;
+};
