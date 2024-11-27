@@ -1,0 +1,12 @@
+.Footer {
+  width: 100%;
+  display: flex;
+  position: relative;
+  min-height: 20px;
+}
+.Footer .option {
+  height: 100%;
+  display: flex;
+  position: absolute;
+  right: 0;
+}

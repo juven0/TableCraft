@@ -8,9 +8,10 @@ import Head from "../table/head";
 import HeadRow from "../table/headRow";
 import Column from "../body/Column";
 import Row from "../body/Row";
+import Footer from "../footer/Footer";
 
 function TableCraft<T>(props: TableProps<T>): JSX.Element {
-  const { noHeader, title } = props;
+  const { noHeader, title, selectableRows } = props;
 
   const showHeader = () => {
     if (noHeader) {
@@ -26,17 +27,10 @@ function TableCraft<T>(props: TableProps<T>): JSX.Element {
     { name: "Mercure" },
     { name: "Vénus" },
     { name: "Terre" },
+    { name: "Mars" },
+    { name: "Jupiter" },
+    { name: "Uranus" },
   ];
-
-  //   "Mercure",
-  //   "Vénus",
-  //   "Terre",
-  //   "Mars",
-  //   "Jupiter",
-  //   "Saturne",
-  //   "Uranus",
-  //   "Neptune",
-  // ];
 
   return (
     <>
@@ -45,14 +39,18 @@ function TableCraft<T>(props: TableProps<T>): JSX.Element {
         <Table>
           <Head>
             <HeadRow>
+              {selectableRows && (
+                <input type="checkbox" style={{ margin: 0 }} />
+              )}
               {planets.map((el) => {
                 return <Column column={el} />;
               })}
             </HeadRow>
           </Head>
           <div className="body">
-            <Row columns={planets} />
+            <Row columns={planets} selectableRows={selectableRows} />
           </div>
+          <Footer />
         </Table>
       </Warpper>
     </>

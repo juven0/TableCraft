@@ -15,11 +15,13 @@ type Story = StoryObj<typeof meta>;
 export const Noheader: Story = {
   args: {
     noHeader: true,
+    selectableRows: true,
   },
 };
 
 export const Withheader: Story = {
   args: {
     title: "Table Craft",
+    selectableRows: false,
   },
 };
