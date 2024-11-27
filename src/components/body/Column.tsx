@@ -3,7 +3,7 @@ import "./Column.css";
 import { TableColumn } from "../../types";
 
 type columnProps<T> = {
-  column: TableColumn;
+  column: TableColumn<T>;
 };
 
 function Column<T>({ column }: columnProps<T>) {

@@ -1,7 +1,7 @@
 import React from "react";
 import "./TableCraft.css";
 import Header from "../header/Header";
-import { TableProps } from "../../types";
+import { TableColumn, TableProps } from "../../types";
 import Warpper from "../table/warpper";
 import Table from "../table/table";
 import Head from "../table/head";
@@ -22,16 +22,21 @@ function TableCraft<T>(props: TableProps<T>): JSX.Element {
     return false;
   };
 
-  const planets: string[] = [
-    "Mercure",
-    "Vénus",
-    "Terre",
-    "Mars",
-    "Jupiter",
-    "Saturne",
-    "Uranus",
-    "Neptune",
+  const planets: TableColumn<T>[] = [
+    { name: "Mercure" },
+    { name: "Vénus" },
+    { name: "Terre" },
   ];
+
+  //   "Mercure",
+  //   "Vénus",
+  //   "Terre",
+  //   "Mars",
+  //   "Jupiter",
+  //   "Saturne",
+  //   "Uranus",
+  //   "Neptune",
+  // ];
 
   return (
     <>
@@ -41,12 +46,12 @@ function TableCraft<T>(props: TableProps<T>): JSX.Element {
           <Head>
             <HeadRow>
               {planets.map((el) => {
-                return <Column column={{ name: el }} />;
+                return <Column column={el} />;
               })}
             </HeadRow>
           </Head>
           <div className="body">
-            <Row />
+            <Row columns={planets} />
           </div>
         </Table>
       </Warpper>
