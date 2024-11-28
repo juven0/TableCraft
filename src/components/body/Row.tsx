@@ -9,6 +9,9 @@ interface RowProps<T> {
   columns?: TableColumn<T>[];
   number?: number;
   selectableRows: boolean;
+  row?: T;
+  matched?: boolean;
+  matchedStyle?: string;
 }
 
 function Row<T>({ columns = [], selectableRows = false }: RowProps<T>) {

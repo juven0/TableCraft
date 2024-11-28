@@ -11,7 +11,7 @@ import Row from "../body/Row";
 import Footer from "../footer/Footer";
 
 function TableCraft<T>(props: TableProps<T>): JSX.Element {
-  const { noHeader, title, selectableRows } = props;
+  const { noHeader, title, selectableRows, columns } = props;
 
   const showHeader = () => {
     if (noHeader) {
@@ -23,14 +23,9 @@ function TableCraft<T>(props: TableProps<T>): JSX.Element {
     return false;
   };
 
-  const planets: TableColumn<T>[] = [
-    { name: "Mercure" },
-    { name: "Vénus" },
-    { name: "Terre" },
-    { name: "Mars" },
-    { name: "Jupiter" },
-    { name: "Uranus" },
-  ];
+  const sortData = React.useMemo(() => {
+    return null;
+  }, []);
 
   return (
     <>
@@ -42,13 +37,13 @@ function TableCraft<T>(props: TableProps<T>): JSX.Element {
               {selectableRows && (
                 <input type="checkbox" style={{ margin: 0 }} />
               )}
-              {planets.map((el) => {
+              {columns.map((el) => {
                 return <Column column={el} />;
               })}
             </HeadRow>
           </Head>
           <div className="body">
-            <Row columns={planets} selectableRows={selectableRows} />
+            <Row columns={columns} selectableRows={selectableRows} />
           </div>
           <Footer />
         </Table>

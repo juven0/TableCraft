@@ -2,7 +2,7 @@ export type TableProps<T> = {
   title?: string;
   noHeader?: boolean;
   actions?: React.ReactNode | React.ReactNode[];
-  columns?: TableColumn<T>[];
+  columns: TableColumn<T>[];
   selectableRows: boolean;
   //test
   data?: T[];

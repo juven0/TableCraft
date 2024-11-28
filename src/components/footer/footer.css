@@ -9,4 +9,29 @@
   display: flex;
   position: absolute;
   right: 0;
+  align-items: center;
+}
+
+.Footer .option button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5em;
+  width: 2.5em;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.enablebutton:hover {
+  border-radius: 50%;
+  background-color: rgb(198, 198, 198);
+}
+.disabledButton {
+  opacity: 0.2;
+}
+
+.Footer .option button img {
+  height: 50%;
 }
