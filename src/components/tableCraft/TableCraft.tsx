@@ -11,7 +11,7 @@ import Row from "../body/Row";
 import Footer from "../footer/Footer";
 
 function TableCraft<T>(props: TableProps<T>): JSX.Element {
-  const { noHeader, title, selectableRows, columns } = props;
+  const { noHeader, title, selectableRows, columns, data = [] } = props;
 
   const showHeader = () => {
     if (noHeader) {
@@ -23,12 +23,15 @@ function TableCraft<T>(props: TableProps<T>): JSX.Element {
     return false;
   };
 
+  //a faire
   const sortData = React.useMemo(() => {
     return null;
   }, []);
 
+  //search
+
   return (
-    <>
+    <div className="TableCraft">
       {showHeader() && <Header title={title} />}
       <Warpper>
         <Table>
@@ -43,12 +46,25 @@ function TableCraft<T>(props: TableProps<T>): JSX.Element {
             </HeadRow>
           </Head>
           <div className="body">
-            <Row columns={columns} selectableRows={selectableRows} />
+            {data != undefined ? (
+              data.map((el: T) => {
+                return (
+                  <Row
+                    key={el.name}
+                    columns={columns}
+                    selectableRows={selectableRows}
+                    row={el}
+                  />
+                );
+              })
+            ) : (
+              <></>
+            )}
           </div>
           <Footer />
         </Table>
       </Warpper>
-    </>
+    </div>
   );
 }
 

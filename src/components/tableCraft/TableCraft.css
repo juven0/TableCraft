@@ -1,5 +1,7 @@
 .TableCraft {
-  background-color: burlywood;
+  box-sizing: border-box;
+  background-color: rgb(246, 246, 246);
+  padding: 20px;
 }
 
 .TableCraft .body {

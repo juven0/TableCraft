@@ -4,10 +4,11 @@ import { TableColumn } from "../../types";
 
 interface CelleProps<T> {
   column: TableColumn<T>;
+  row: T;
 }
 
-function Cell<T>({ column }: CelleProps<T>) {
-  return <div className="Cell">{column.name}</div>;
+function Cell<T>({ column, row }: CelleProps<T>) {
+  return <div className="Cell">{row[column.name]}</div>;
 }
 
 export default React.memo(Cell);
