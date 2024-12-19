@@ -44,6 +44,7 @@ export interface AllRowAction<T> {
   type: "SELECT_ALL_ROWS";
   row: T[];
   count: number;
+  rowCount: number;
 }
 
 export interface SingleRowAction<T> {
@@ -52,6 +53,7 @@ export interface SingleRowAction<T> {
   row: T;
   isSelected: boolean;
   rowCount: number;
+  sigleSelected: boolean;
 }
 
 export interface MultiRowAction<T> {
