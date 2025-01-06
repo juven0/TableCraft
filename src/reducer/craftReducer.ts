@@ -1,9 +1,6 @@
 import { Action, TableState } from "../types";
 
-export function CraftReducer<T>(
-  state: TableState<T>,
-  action: Action<T>
-): TableState<T> {
+export function CraftReducer<T>(state: TableState<T>, action: Action<T>) {
   switch (action.type) {
     case "SELECT_ALL_ROWS": {
       const allSelected = !state.allSelected;
@@ -12,6 +9,26 @@ export function CraftReducer<T>(
         allSelected: allSelected,
         selectedCount: allSelected ? action.rowCount : 0,
         selectedRow: action.row,
+      };
+    }
+
+    case "SELECT_MULTIPLE_ROWS": {
+      const { keyField, selectedRows, totalRows } = action;
+
+      return {
+        ...state,
+        selectedCount: selectedRows.length,
+        selectedRow: selectedRows,
+        allSelected: selectedRows.length === totalRows,
+      };
+    }
+
+    case "CHANGE_PAGE": {
+      const { page } = action;
+
+      return {
+        ...state,
+        curentPage: page,
       };
     }
 
@@ -34,17 +51,6 @@ export function CraftReducer<T>(
           allSelected: false,
         };
       }
-    }
-
-    case "SELECT_MULTIPLE_ROWS": {
-      const { keyField, selectedRows, totalRows } = action;
-
-      return {
-        ...state,
-        selectedCount: selectedRows.length,
-        selectedRow: selectedRows,
-        allSelected: selectedRows.length === totalRows,
-      };
     }
   }
 }

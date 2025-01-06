@@ -66,12 +66,13 @@ export interface MultiRowAction<T> {
 export interface PaginationPageAction {
   type: "CHANGE_PAGE";
   page: number;
-  // paginationServer: boolean;
-  // visibleOnly: boolean;
-  // persistSelectedOnPageChange: boolean;
+  paginationServer: boolean;
+  visibleOnly: boolean;
+  persistSelectedOnPageChange: boolean;
 }
 
 export type Action<T> =
   | AllRowAction<T>
+  | MultiRowAction<T>
   | SingleRowAction<T>
-  | MultiRowAction<T>;
+  | PaginationPageAction;
